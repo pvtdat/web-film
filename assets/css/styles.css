@@ -1,0 +1,384 @@
+body {
+    background: linear-gradient(to right, #0F172A, #274b94 33%, #274b94 33%, #5854A5 66%, #815DB3);
+}
+
+.line {
+    color: #B7BDD8;
+}
+
+.genre-title {
+    display: inline-flex;
+    font-family: 'Source Sans Pro';
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: bolder;
+    align-items: center;
+    text-decoration: none;
+}
+
+.genre-title i {
+    margin-top: 5px;
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+.genre-title:hover {
+    font-size: 25px;
+    color: #373E54;
+}
+
+.btn-prev,
+.btn-next {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    border: 2px solid #9298B2;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: transparent;
+}
+
+.btn-prev-icon,
+.btn-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.title {
+    font-family: 'Anton';
+    color: #ffffff;
+}
+
+.title-film {
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.sub-title-film {
+    font-family: 'Josefin Sans';
+}
+
+.carousel-inner .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    transition: .3s;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 72, 112, 0);
+    transition: .3s;
+    z-index: 1;
+}
+
+.card:hover::before {
+    background: rgba(5, 0, 0, 0.6);
+}
+
+.card:hover .book-container,
+.card:hover .informations-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card .book-container,
+.card .informations-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    transition: .3s;
+    z-index: 2;
+}
+
+.card .book-container {
+    top: 30%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    z-index: 3;
+}
+
+.card .book-container .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.card .informations-container {
+    bottom: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+.card .book-container .content .btn {
+    flex: 1;
+    margin: 0 5px;
+    border: 1px solid #C0B687;
+    padding: 10px 10px;
+    background: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    color: #C0B687;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.card .book-container .content .btn:hover {
+    background: #C0B687;
+    border: 0;
+    color: white;
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+    z-index: 0;
+    height: 300px;
+    width: 200px;
+}
+
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .card-img-top {
+        height: 250px;
+        width: 150px;
+    }
+
+    .genre-title {
+        font-size: 22px;
+    }
+    
+    .genre-title:hover {
+        font-size: 23px;
+    }
+
+    .title-film {
+        font-size: 15px;
+    }
+
+    .sub-title-film {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .card-img-top {
+        height: 180px;
+        width: 120px;
+    }
+
+    .genre-title {
+        font-size: 22px;
+    }
+    
+    .genre-title:hover {
+        font-size: 23px;
+    }
+
+    .card {
+        border-radius: 8px;
+    }
+
+    .card .informations-container {
+        padding: 6px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .content {
+        padding: 6px;
+    }
+
+    .title-film {
+        margin: 6px;
+        font-size: 12px;
+    }
+
+    .sub-title-film {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card-img-top {
+        border-radius: 8px 8px 0 0;
+        height: 160px;
+        width: 108px;
+    }
+
+    .genre-title {
+        font-size: 20px;
+    }
+    
+    .genre-title:hover {
+        font-size: 21px;
+    }
+
+
+    .title-film {
+        margin: 4px;
+        font-size: 11px;
+    }
+
+    .sub-title-film {
+        font-size: 9px;
+    }
+
+    .card .informations-container {
+        padding: 4px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .content {
+        padding: 4px;
+    }
+
+    .card .book-container .content .btn {
+        margin: 0 2.5px;
+        padding: 6px 6px;
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .card-img-top {
+        border-radius: 4px 4px 0 0;
+        height: 236px;
+        width: 156px;
+    }
+
+    .genre-title {
+        font-size: 20px;
+    }
+    
+    .genre-title:hover {
+        font-size: 19px;
+    }
+
+    .title-film {
+        margin: 4px;
+        font-size: 13px;
+    }
+
+    .sub-title-film {
+        font-size: 12px;
+    }
+
+    .card .informations-container {
+        padding: 8px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .card .book-container .content .btn {
+        margin: 0 5px;
+        padding: 10px 10px;
+        font-size: 12px;
+    }
+
+    .mobile-card {
+        margin-bottom: 20px;
+    }
+
+    .btn-prev,
+    .btn-next {
+        border: 1px solid #9298B2;
+    }
+
+    .btn-prev-icon,
+    .btn-next-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media only screen and (max-width: 432px) {
+    .card-img-top {
+        border-radius: 4px 4px 0 0;
+        height: 236px;
+        width: 156px;
+    }
+
+    .genre-title {
+        font-size: 18px;
+    }
+    
+    .genre-title:hover {
+        font-size: 17px;
+    }
+
+    .title-film {
+        margin: 4px;
+        font-size: 12px;
+    }
+
+    .sub-title-film {
+        font-size: 11px;
+    }
+
+    .card .informations-container {
+        padding: 8px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .card .book-container .content .btn {
+        margin: 0 5px;
+        padding: 10px 10px;
+        font-size: 12px;
+    }
+
+    .mobile-card {
+        margin-bottom: 18px;
+    }
+
+    .btn-prev,
+    .btn-next {
+        border: 1px solid #9298B2;
+    }
+
+    .btn-prev-icon,
+    .btn-next-icon {
+        width: 15px;
+        height: 15px;
+    }
+}
