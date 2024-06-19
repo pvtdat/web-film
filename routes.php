@@ -1,6 +1,7 @@
 <?php
 $controllers = array(
-  'pages' => ['home', 'error']
+  'pages' => ['home', 'error'],
+  'movie' => ['theatermovies', 'singlemovies', 'newseries', 'newmovies', 'cartoon']
 );
 
 if (!array_key_exists($controller, $controllers) || !in_array($action, $controllers[$controller])) {

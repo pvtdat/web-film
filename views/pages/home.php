@@ -1,7 +1,7 @@
 <?php
-  $api = API_KKPHIM::getInstance();
-  $response_object2 = $api->get_api_list_new_films('1');
-  $url_src = $response_object3['APP_DOMAIN_CDN_IMAGE'];
+$api = API_KKPHIM::getInstance();
+$response_object2 = $api->get_api_list_new_films('1');
+$url_src = $response_object3['APP_DOMAIN_CDN_IMAGE'];
 ?>
 
 <body>
@@ -38,7 +38,7 @@
 
   <!-- PHIM RẠP -->
   <div class="mt-2 pt-3 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="">Phim chiếu rạp
+    <a class="genre-title text-left" href="?controller=movie&action=theatermovies">Phim chiếu rạp
       <i class="fas fa-angle-right"></i>
     </a>
     <div class="d-flex justify-content-end pe-4">
@@ -75,18 +75,19 @@
                 <?php
                 $movie_poster = $movie['poster_path'];
                 if (empty($movie_poster)) {
-                  $movie_poster = '/web-film/assets/image/img_not_available.jpg';
+                  $movie_poster = '/web-film/assets/image/img/img_not_available.jpg';
+                } else {
+                  $movie_poster = 'https://image.tmdb.org/t/p/w500/' . $movie['poster_path'];
                 }
                 $movie_origin_name = $movie['original_title'];
                 if (empty($movie_origin_name)) {
                   $movie_origin_name = 'Unavailable';
                 }
                 ?>
-                <img loading="lazy" class="card-img-top" src="<?= 'https://image.tmdb.org/t/p/w500' . $movie_poster ?>"
-                  alt="<?= $movie_origin_name ?>">
+                <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
-                    <a href="<?= '?controller=movie&action=filmwatching&id=' . $movie['id'] ?>">
+                    <a href="<?= '?controller=movie&action=filmdetail&id=' . $movie['id'] ?>">
                       <button class="btn">Trailer</button>
                     </a>
                   </div>
@@ -117,7 +118,7 @@
 
   <!-- PHIM MỚI -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="">Phim mới cập nhật
+    <a class="genre-title text-left" href="?controller=movie&action=newmovies">Phim mới cập nhật
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -155,7 +156,7 @@
                 <?php
                 $movie_poster = $movie['poster_url'];
                 if (empty($movie_poster)) {
-                  $movie_poster = '/web-film/assets/image/img_not_available.jpg';
+                  $movie_poster = '/web-film/assets/image/img/img_not_available.jpg';
                 }
                 $movie_origin_name = $movie['origin_name'];
                 if (empty($movie_origin_name)) {
@@ -194,7 +195,7 @@
 
   <!-- PHIM LẺ -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="">Phim lẻ mới cập nhật
+    <a class="genre-title text-left" href="?controller=movie&action=singlemovies">Phim lẻ mới cập nhật
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -232,15 +233,16 @@
                 <?php
                 $movie_poster = $movie['poster_url'];
                 if (empty($movie_poster)) {
-                  $movie_poster = '/web-film/assets/image/img_not_available.jpg';
+                  $movie_poster = '/web-film/assets/image/img/img_not_available.jpg';
+                } else {
+                  $movie_poster = $url_src . '/' . $movie['poster_url'];
                 }
                 $movie_origin_name = $movie['origin_name'];
                 if (empty($movie_origin_name)) {
                   $movie_origin_name = 'Unavailable';
                 }
                 ?>
-                <img loading="lazy" class="card-img-top" src="<?= $url_src . '/' . $movie_poster ?>"
-                  alt="<?= $movie_origin_name ?>">
+                <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
                     <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>">
@@ -272,7 +274,7 @@
 
   <!-- PHIM BỘ -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="">Phim bộ mới cập nhật
+    <a class="genre-title text-left" href="?controller=movie&action=newseries">Phim bộ mới cập nhật
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -310,15 +312,16 @@
                 <?php
                 $movie_poster = $movie['poster_url'];
                 if (empty($movie_poster)) {
-                  $movie_poster = '/web-film/assets/image/img_not_available.jpg';
+                  $movie_poster = '/web-film/assets/image/img/img_not_available.jpg';
+                } else {
+                  $movie_poster = $url_src . '/' . $movie['poster_url'];
                 }
                 $movie_origin_name = $movie['origin_name'];
                 if (empty($movie_origin_name)) {
                   $movie_origin_name = 'Unavailable';
                 }
                 ?>
-                <img loading="lazy" class="card-img-top" src="<?= $url_src . '/' . $movie_poster ?>"
-                  alt="<?= $movie_origin_name ?>">
+                <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
                     <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>">
@@ -350,7 +353,7 @@
 
   <!-- DOREAMON -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="">Phim hoạt hình
+    <a class="genre-title text-left" href="?controller=movie&action=cartoon">Phim hoạt hình
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -388,15 +391,16 @@
                 <?php
                 $movie_poster = $movie['poster_url'];
                 if (empty($movie_poster)) {
-                  $movie_poster = '/web-film/assets/image/img_not_available.jpg';
+                  $movie_poster = '/web-film/assets/image/img/img_not_available.jpg';
+                } else {
+                  $movie_poster = $url_src . '/' . $movie['poster_url'];
                 }
                 $movie_origin_name = $movie['origin_name'];
                 if (empty($movie_origin_name)) {
                   $movie_origin_name = 'Unavailable';
                 }
                 ?>
-                <img loading="lazy" class="card-img-top" src="<?= $url_src . '/' . $movie_poster ?>"
-                  alt="<?= $movie_origin_name ?>">
+                <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
                     <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>">

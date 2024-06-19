@@ -2,7 +2,9 @@
 class API_KKPHIM {
     private static $instance = null;
     private $api_response_list_new_films = null;
+    private $api_response_list_single_film = null;
     private $api_response_list_single_films = null;
+    private $api_response_list_series_film = null;
     private $api_response_list_series_films = null;
     private $api_response_list_nobita_films = null;
     private $api_response_list_search_films = null;
@@ -88,16 +90,16 @@ class API_KKPHIM {
     }
 
     public function get_api_list_single_films() {
-        if ($this->api_response_list_single_films === null) {
+        if ($this->api_response_list_single_film === null) {
             try {
                 $url = 'https://phimapi.com/v1/api/danh-sach/phim-le';
-                $this->api_response_list_single_films = $this->make_api_request($url, []);
+                $this->api_response_list_single_film = $this->make_api_request($url, []);
             } catch (Exception $ex) {
                 header("Location: /web-film/?controller=page&action=error_500");
                 exit();  
             }
         }
-        return $this->api_response_list_single_films;        
+        return $this->api_response_list_single_film;        
     }
 
     public function get_api_list_new_movies($page) {
@@ -117,16 +119,16 @@ class API_KKPHIM {
     }
 
     public function get_api_list_series_films() {
-        if ($this->api_response_list_series_films === null) {
+        if ($this->api_response_list_series_film === null) {
             try {
                 $url = 'https://phimapi.com/v1/api/danh-sach/phim-bo';
-                $this->api_response_list_series_films = $this->make_api_request($url, []);
+                $this->api_response_list_series_film = $this->make_api_request($url, []);
             } catch (Exception $ex) {
                 header("Location: /web-film/?controller=page&action=error_500");
                 exit();  
             }
         }
-        return $this->api_response_list_series_films;        
+        return $this->api_response_list_series_film;        
     }
 
     public function get_api_list_new_series($page) {
