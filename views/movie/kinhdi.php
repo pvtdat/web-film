@@ -1,22 +1,19 @@
 <?php
-    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-    $api = API_KKPHIM::getInstance();
-    $response_object = $api->get_api_list_cartoon($page)['data'];
-    $url_src = $response_object['APP_DOMAIN_CDN_IMAGE'];
+    $url_src = 'https://img.phimapi.com/';
 ?>
 
 <div class="title my-4">
-    <h1 class="text-center"><strong>PHIM HOẠT HÌNH</strong></h1>
+    <h1 class="text-center"><strong>PHIM KINH DỊ</strong></h1>
 </div>
 
 <div>
     <?php
     $counter = 0;
     $max_items = 18;
-    foreach ($response_object['items'] as $index => $movie):
-        if ($index >= $max_items) {
-            break;
-        }
+    foreach ($genre_kinh_di as $index => $movie):
+        // if ($index >= $max_items) {
+        //     break;
+        // }
         if ($counter % 4 === 0):
             if ($counter > 0):
                 echo '</div>';
@@ -27,13 +24,13 @@
         <div class="mobile-card-list d-flex justify-content-center col-5 col-sm-2 col-md-2 col-lg-2 col-xl-2">
             <div class="card">
                 <?php
-                $movie_poster = $movie['poster_url'];
+                $movie_poster = $movie->poster_url;
                 if (empty($movie_poster)) {
                   $movie_poster = '/web-film/assets/image/img/img_not_available.jpg';
                 } else {
-                  $movie_poster = $url_src . '/' . $movie['poster_url'];
+                  $movie_poster = $url_src . '/' . $movie->poster_url;
                 }
-                $movie_origin_name = $movie['origin_name'];
+                $movie_origin_name = $movie->origin_name;
                 if (empty($movie_origin_name)) {
                     $movie_origin_name = 'Unavailable';
                 }
@@ -41,18 +38,18 @@
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                     <div class="content">
-                        <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>"><button
+                        <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie->slug ?>"><button
                                 class="btn">Xem ngay</button></a>
                     </div>
                 </div>
                 <div class="informations-container">
                     <?php
-                    $title = mb_convert_encoding($movie['name'], 'UTF-8');
+                    $title = mb_convert_encoding($movie->name, 'UTF-8');
                     if (mb_strlen($title) > 28) {
                         $title = mb_substr($title, 0, 28) . '..';
                     }
                     $title = mb_strtoupper($title, 'UTF-8');
-                    $year = $movie['year'];
+                    $year = $movie->year;
                     ?>
                     <h6 class="title-film mt-2"><?= $title ?></h6>
                     <p class="sub-title-film mb-0"><small class="text-muted"><?= $year ?></small></p>
@@ -132,7 +129,7 @@ function createPaginationButtons($totalPages, $currentPage)
 
 echo '<script>
         function goToPage(pageNumber) {
-            window.location.href = "?controller=movie&action=cartoon&page=" + pageNumber;
+            window.location.href = "?controller=movie&action=singlemovies&page=" + pageNumber;
         }
         </script>';
 

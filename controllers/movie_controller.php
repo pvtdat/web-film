@@ -51,4 +51,14 @@ class MovieController extends BaseController
     );
     $this->render('cartoon', $data);
   }
+
+  public function kinhdi()
+  {
+    require_once ('models/genres.php');
+    $genre_kinh_di = Genres::getKinhDi();
+    $data = array(
+      'genre_kinh_di'=> $genre_kinh_di
+    );
+    $this->render('kinhdi', $data);
+  }
 }

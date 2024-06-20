@@ -1,5 +1,5 @@
 <?php
-class Home
+class Poster
 {
     public $name;
     public $image;
@@ -19,7 +19,7 @@ class Home
         $req = $db->query('SELECT * FROM poster');
 
         foreach ($req->fetchAll() as $item) {
-            $list[] = new Home($item['name'], $item['image'], $item['position']);
+            $list[] = new Poster($item['name'], $item['image'], $item['position']);
         }
 
         return $list;

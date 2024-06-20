@@ -7,6 +7,9 @@ class API_KKPHIM {
     private $api_response_list_series_film = null;
     private $api_response_list_series_films = null;
     private $api_response_list_nobita_films = null;
+    private $api_response_list_harry_potter_films = null;
+    private $api_response_list_lat_mat_films = null;
+    private $api_response_list_nga_re_tu_than_films = null;
     private $api_response_list_search_films = null;
     private $api_response_list_cartoon = null;
     private $api_response_detail = null;
@@ -35,9 +38,15 @@ class API_KKPHIM {
     private function make_api_request($url, $query_fields) {
         $cache_key = md5($url . serialize($query_fields));
         $cache_file = $this->cache_dir . $cache_key;
-        $ttl = 7 * 24 * 60 * 60;
+        $ttl = 30 * 24 * 60 * 60;
+        
+        // $this->cleanup_cache();
 
-        if (file_exists($cache_file) && (filemtime($cache_file) > (time() - $ttl))) {
+        // if (file_exists($cache_file) && (filemtime($cache_file) > (time() - $ttl))) {
+        //     return json_decode(file_get_contents($cache_file), true);
+        // }
+
+        if (file_exists($cache_file)) {
             return json_decode(file_get_contents($cache_file), true);
         }
 
@@ -177,6 +186,54 @@ class API_KKPHIM {
             }
         }
         return $this->api_response_list_nobita_films;        
+    }
+
+    public function get_api_list_harry_potter_films() {
+        if ($this->api_response_list_harry_potter_films === null) {
+            try {
+                $url = 'https://phimapi.com/v1/api/tim-kiem';
+                $query_fields = [
+                    'keyword'=> 'harry potter va'
+                ];
+                $this->api_response_list_harry_potter_films = $this->make_api_request($url, $query_fields);
+            } catch (Exception $ex) {
+                header("Location: /web-film/?controller=page&action=error_500");
+                exit();  
+            }
+        }
+        return $this->api_response_list_harry_potter_films;        
+    }
+
+    public function get_api_list_lat_mat_films() {
+        if ($this->api_response_list_lat_mat_films === null) {
+            try {
+                $url = 'https://phimapi.com/v1/api/tim-kiem';
+                $query_fields = [
+                    'keyword'=> 'lat mat'
+                ];
+                $this->api_response_list_lat_mat_films = $this->make_api_request($url, $query_fields);
+            } catch (Exception $ex) {
+                header("Location: /web-film/?controller=page&action=error_500");
+                exit();  
+            }
+        }
+        return $this->api_response_list_lat_mat_films;        
+    }
+
+    public function get_api_list_nga_re_tu_than_films() {
+        if ($this->api_response_list_nga_re_tu_than_films === null) {
+            try {
+                $url = 'https://phimapi.com/v1/api/tim-kiem';
+                $query_fields = [
+                    'keyword'=> 'nga re tu than'
+                ];
+                $this->api_response_list_nga_re_tu_than_films = $this->make_api_request($url, $query_fields);
+            } catch (Exception $ex) {
+                header("Location: /web-film/?controller=page&action=error_500");
+                exit();  
+            }
+        }
+        return $this->api_response_list_nga_re_tu_than_films;        
     }
 
     public function get_api_list_search_films($keyword) {
