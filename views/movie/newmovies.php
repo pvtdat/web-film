@@ -38,7 +38,7 @@
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                     <div class="content">
-                        <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>"><button
+                        <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie['slug'] ?>"><button
                                 class="btn">Xem ngay</button></a>
                     </div>
                 </div>

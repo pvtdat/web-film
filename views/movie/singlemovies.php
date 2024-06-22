@@ -5,7 +5,7 @@
     $url_src = $response_object['APP_DOMAIN_CDN_IMAGE'];
 ?>
 
-<div class="title my-4">
+<div class="title my-5">
     <h1 class="text-center"><strong>PHIM LẺ MỚI</strong></h1>
 </div>
 
@@ -41,7 +41,7 @@
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                     <div class="content">
-                        <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>"><button
+                        <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie['slug'] ?>"><button
                                 class="btn">Xem ngay</button></a>
                     </div>
                 </div>

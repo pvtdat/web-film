@@ -27,10 +27,12 @@
     <link rel="stylesheet" href="/web-film/assets/css/styles.css">
     <title>DATiT</title>
 
+    <!-- Nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img style="border-radius: 15px;" src="https://media.giphy.com/media/WMob15P0h9O04LlqLo/giphy.gif" alt="DIT Logo" width="50" height="50">
+        <a class="navbar-brand" href="?controller=pages&action=home">
+          <img style="border-radius: 15px;" src="https://media.giphy.com/media/WMob15P0h9O04LlqLo/giphy.gif"
+            alt="DIT Logo" width="50" height="50">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
           aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,9 +52,9 @@
                 <li><a class="dropdown-item" href="?controller=movie&action=kinhdi">Kinh dị</a></li>
                 <li><a class="dropdown-item" href="?controller=movie&action=cartoon">Hoạt hình</a></li>
                 <!-- <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li> -->
               </ul>
             </li>
             <li class="nav-item">
@@ -65,8 +67,8 @@
               <a class="nav-link" href="?controller=movie&action=newseries">Phim bộ mới</a>
             </li>
           </ul>
-          <form class="d-flex search-form">
-            <input class="form-control me-2" type="search" placeholder="Tìm phim" aria-label="Search">
+          <form class="d-flex search-form" action="?controller=movie&action=searching" method="POST">
+            <input class="form-control me-2" type="search" placeholder="Tìm phim" aria-label="Search" name="key">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>

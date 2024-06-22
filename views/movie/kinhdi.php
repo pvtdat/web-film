@@ -1,19 +1,23 @@
 <?php
     $url_src = 'https://img.phimapi.com/';
+    $items_per_page = 20;
+    $total_items = sizeof($genre_kinh_di);
+    
+    $totalPages = ceil($total_items / $items_per_page);
+    $currentPage  = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    $offset = ($currentPage  - 1) * $items_per_page;
+    
+    $movies_for_current_page = array_slice($genre_kinh_di, $offset, $items_per_page);
 ?>
 
-<div class="title my-4">
+<div class="title my-5">
     <h1 class="text-center"><strong>PHIM KINH DỊ</strong></h1>
 </div>
 
 <div>
     <?php
     $counter = 0;
-    $max_items = 18;
-    foreach ($genre_kinh_di as $index => $movie):
-        // if ($index >= $max_items) {
-        //     break;
-        // }
+    foreach ($movies_for_current_page  as $index => $movie):
         if ($counter % 4 === 0):
             if ($counter > 0):
                 echo '</div>';
@@ -38,7 +42,7 @@
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                     <div class="content">
-                        <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie->slug ?>"><button
+                        <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie->slug ?>"><button
                                 class="btn">Xem ngay</button></a>
                     </div>
                 </div>
@@ -129,11 +133,8 @@ function createPaginationButtons($totalPages, $currentPage)
 
 echo '<script>
         function goToPage(pageNumber) {
-            window.location.href = "?controller=movie&action=singlemovies&page=" + pageNumber;
+            window.location.href = "?controller=movie&action=kinhdi&page=" + pageNumber;
         }
         </script>';
-
-    $totalPages = $response_object['params']['pagination']['totalPages'] ?? 1;
-    $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
     echo createPaginationButtons($totalPages, $currentPage);
 ?>

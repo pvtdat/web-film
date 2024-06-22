@@ -61,4 +61,22 @@ class MovieController extends BaseController
     );
     $this->render('kinhdi', $data);
   }
+
+  public function searching()
+  {
+    require_once ('models/api_phimkk.php');
+    $this->render('searching');
+  }
+
+  public function watchingmovie()
+  {
+    require_once ('models/api_phimkk.php');
+    $this->render('watchingmovie');
+  }
+
+  public function watchingtrailer()
+  {
+    require_once ('models/api_tmdb.php');
+    $this->render('watchingtrailer');
+  }
 }

@@ -111,7 +111,7 @@ function get_database_connection()
 
   <!-- PHIM RẠP -->
   <div class="mt-2 pt-3 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="?controller=movie&action=theatermovies">Phim chiếu rạp
+    <a class="genre-title text-left" href="?controller=movie&action=theatermovies">PHIM ĐANG CHIẾU
       <i class="fas fa-angle-right"></i>
     </a>
     <div class="d-flex justify-content-end pe-4">
@@ -160,7 +160,7 @@ function get_database_connection()
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
-                    <a href="<?= '?controller=movie&action=filmdetail&id=' . $movie['id'] ?>">
+                    <a href="<?= '?controller=movie&action=watchingtrailer&id=' . $movie['id'] ?>">
                       <button class="btn">Trailer</button>
                     </a>
                   </div>
@@ -191,7 +191,7 @@ function get_database_connection()
 
   <!-- PHIM MỚI -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="?controller=movie&action=newmovies">Phim mới cập nhật
+    <a class="genre-title text-left" href="?controller=movie&action=newmovies">PHIM MỚI CẬP NHẬT
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -239,7 +239,7 @@ function get_database_connection()
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
-                    <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>">
+                    <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie['slug'] ?>">
                       <button class="btn">Xem ngay</button>
                     </a>
                   </div>
@@ -268,7 +268,7 @@ function get_database_connection()
 
   <!-- LẬT MẶT -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="disabled genre-title text-left" href="">Lật mặt
+    <a class="disabled genre-title text-left" href="">LẬT MẶT
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -318,7 +318,7 @@ function get_database_connection()
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
-                    <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>">
+                    <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie['slug'] ?>">
                       <button class="btn">Xem ngay</button>
                     </a>
                   </div>
@@ -347,7 +347,7 @@ function get_database_connection()
 
     <!-- NGÃ RẼ TỬ THẦN -->
     <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="disabled genre-title text-left" href="">Ngã rẽ tử thần
+    <a class="disabled genre-title text-left" href="">NGÃ RẼ TỬ THẦN
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -397,7 +397,7 @@ function get_database_connection()
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
-                    <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>">
+                    <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie['slug'] ?>">
                       <button class="btn">Xem ngay</button>
                     </a>
                   </div>
@@ -426,7 +426,7 @@ function get_database_connection()
 
   <!-- HARRY POTTER -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="disabled genre-title text-left" href="">Harry Potter
+    <a class="disabled genre-title text-left" href="">HARRY POTTER
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -476,7 +476,7 @@ function get_database_connection()
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
-                    <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>">
+                    <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie['slug'] ?>">
                       <button class="btn">Xem ngay</button>
                     </a>
                   </div>
@@ -505,7 +505,7 @@ function get_database_connection()
 
   <!-- DOREAMON -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="?controller=movie&action=cartoon">Phim hoạt hình
+    <a class="genre-title text-left" href="?controller=movie&action=cartoon">PHIM HOẠT HÌNH
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -555,7 +555,7 @@ function get_database_connection()
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
-                    <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>">
+                    <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie['slug'] ?>">
                       <button class="btn">Xem ngay</button>
                     </a>
                   </div>
@@ -584,7 +584,7 @@ function get_database_connection()
 
   <!-- PHIM LẺ -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="?controller=movie&action=singlemovies">Phim lẻ mới cập nhật
+    <a class="genre-title text-left" href="?controller=movie&action=singlemovies">PHIM LẺ
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -634,7 +634,7 @@ function get_database_connection()
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
-                    <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>">
+                    <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie['slug'] ?>">
                       <button class="btn">Xem ngay</button>
                     </a>
                   </div>
@@ -663,7 +663,7 @@ function get_database_connection()
 
   <!-- PHIM BỘ -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="?controller=movie&action=newseries">Phim bộ mới cập nhật
+    <a class="genre-title text-left" href="?controller=movie&action=newseries">PHIM BỘ
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -713,7 +713,7 @@ function get_database_connection()
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
-                    <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie['slug'] ?>">
+                    <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie['slug'] ?>">
                       <button class="btn">Xem ngay</button>
                     </a>
                   </div>
@@ -742,7 +742,7 @@ function get_database_connection()
 
   <!-- KINH DỊ -->
   <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
-    <a class="genre-title text-left" href="?controller=movie&action=kinhdi">Phim kinh dị
+    <a class="genre-title text-left" href="?controller=movie&action=kinhdi">PHIM KINH DỊ
       <i class="fas fa-angle-right"></i>
 
     </a>
@@ -792,7 +792,7 @@ function get_database_connection()
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                   <div class="content">
-                    <a href="<?= '?controller=movie&action=filmwatching&slug=' . $movie->slug ?>">
+                    <a href="<?= '?controller=movie&action=watchingmovie&slug=' . $movie->slug ?>">
                       <button class="btn">Xem ngay</button>
                     </a>
                   </div>

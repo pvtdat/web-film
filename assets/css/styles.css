@@ -21,7 +21,7 @@ body {
     width: 100%;
     z-index: 1000;
     font-family: 'Josefin Sans';
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .nav-link, .dropdown-item {
@@ -30,7 +30,7 @@ body {
 
 .navbar-nav .nav-link:hover {
     color: #0f172a !important;
-    font-size: 19px;
+    font-size: 17px;
 }
 
 .search-form {
@@ -43,7 +43,7 @@ body {
 }
 
 .dropdown-item:hover {
-    background-color: #666 !important;
+    background-color: #4A5F9E !important;
 }
 
 .btn-outline-success {
@@ -273,6 +273,159 @@ body {
     color: #aaa;
     cursor: not-allowed;
     border: 1px solid #ccc;
+}
+
+.movie-description li {
+    list-style-type: none;
+    font-family: 'Josefin Sans';
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.sub-content {
+    text-decoration: none;
+    color: #e9e9e9;
+    font-size: 16px;
+    text-align: justify;
+}
+
+:root {
+    --circle-width: 0.09em;
+    --circle-width-hover: 0.07em;
+    --primary-color: #000000;
+    --secondary-color: #dfe8ed;
+    --bg-color: #ffffff;
+    --primary-color-blue: #30bae7;
+    --primary-color-green: #15c7a8;
+    --primary-color-orange: #eb7d4b;
+    --primary-color-pink: #d74680;
+    --primary-color-span: #3c4761;
+}
+
+.c100 {
+    display: inline-block;
+    position: relative;
+    font-size: 70px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    vertical-align: middle;
+}
+
+.c100>span {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 5em;
+    line-height: 5em;
+    font-size: 0.2em;
+    color: var(--primary-color-span);
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.2s ease-out;
+}
+
+.c100:after {
+    position: absolute;
+    top: var(--circle-width);
+    left: var(--circle-width);
+    display: block;
+    content: " ";
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    width: calc(1em - (2 * var(--circle-width)));
+    height: calc(1em - (2 * var(--circle-width)));
+    transition: all 0.2s ease-in;
+}
+
+.slice {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    clip: rect(0em, 1em, 1em, 0.5em);
+}
+
+.c100:hover {
+    cursor: default;
+}
+
+.c100:hover>span {
+    width: 3.33em;
+    line-height: 3.33em;
+    font-size: 0.3em;
+    color: var(--primary-color-span);
+}
+
+.c100:hover:after {
+    top: var(--circle-width-hover);
+    left: var(--circle-width-hover);
+    width: calc(1em - (2 * var(--circle-width-hover)));
+    height: calc(1em - (2 * var(--circle-width-hover)));
+}
+
+.c100.p70>span {
+    color: var(--primary-color-green);
+}
+
+.user-score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.user-score-text {
+    text-align: center;
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.video-container {
+    margin-bottom: 20px;
+}
+
+.halim-list-eps {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.halim-episode {
+    margin: 5px;
+}
+
+.halim-btn {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #1f2c3e;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.halim-btn:hover {
+    background-color: #810438;
+    color: #ffffff;
+}
+
+.halim-btn.active {
+    background-color: #cf0f0f;
+    color: #ffffff;
+    pointer-events: none;
 }
 
 @media only screen and (max-width: 1200px) {

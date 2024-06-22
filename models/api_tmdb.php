@@ -4,6 +4,10 @@ class API_TMDB
 {
     private static $instance = null;
     private $api_response_list_new_films = null;
+    private $api_response_detail_film = null;
+    private $api_response_video_film = null;
+    private $api_response_video_film_english = null;
+
     private $cache_dir = __DIR__ . '/cache/';
 
     private function __construct()
@@ -89,5 +93,53 @@ class API_TMDB
             }
         }
         return $this->api_response_list_new_films;
+    }
+
+    public function get_api_detail_movie($movie_id)
+    {
+        if ($this->api_response_detail_film === null) {
+            try {
+                $url = 'https://api.themoviedb.org/3/movie/' . $movie_id;
+                $query_fields = [
+                    'language' => 'vi-VI'
+                ];
+                $this->api_response_detail_film = $this->make_api_request($url, $query_fields);
+            } catch (Exception $ex) {
+                header("Location: /web-film/?controller=page&action=error_500");
+                exit();
+            }
+        }
+        return $this->api_response_detail_film;
+    }
+
+    public function get_api_video_movie($movie_id)
+    {
+        if ($this->api_response_video_film === null) {
+            try {
+                $url = 'https://api.themoviedb.org/3/movie/' . $movie_id . '/videos';
+                $query_fields = [
+                    'language' => 'vi-VI'
+                ];
+                $this->api_response_video_film = $this->make_api_request($url, $query_fields);
+            } catch (Exception $ex) {
+                header("Location: /web-film/?controller=page&action=error_500");
+                exit();
+            }
+        }
+        return $this->api_response_video_film;
+    }
+
+    public function get_api_video_movie_english($movie_id)
+    {
+        if ($this->api_response_video_film_english === null) {
+            try {
+                $url = 'https://api.themoviedb.org/3/movie/' . $movie_id . '/videos';
+                $this->api_response_video_film_english = $this->make_api_request($url, []);
+            } catch (Exception $ex) {
+                header("Location: /web-film/?controller=page&action=error_500");
+                exit();
+            }
+        }
+        return $this->api_response_video_film_english;
     }
 }

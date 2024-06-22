@@ -40,7 +40,7 @@
                 <img loading="lazy" class="card-img-top" src="<?= $movie_poster ?>" alt="<?= $movie_origin_name ?>">
                 <div class="book-container">
                     <div class="content">
-                        <a href="<?= '?controller=movie&action=filmdetail&id=' . $movie['id'] ?>"><button
+                        <a href="<?= '?controller=movie&action=watchingtrailer&id=' . $movie['id'] ?>"><button
                                 class="btn">Trailer</button></a>
                     </div>
                 </div>
