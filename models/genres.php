@@ -21,12 +21,10 @@ class Genres
         require_once("models/cache.php");
         $cache = new Cache();
         $cacheKey = 'kinh_di_genre';
-        $cacheExpiry = 3 * 24 * 60 * 60; // 3 days in seconds
+        $cacheExpiry = 3 * 24 * 60 * 60;
 
-        // Attempt to get data from cache
         $list = $cache->get($cacheKey);
         if ($list === null) {
-            // Cache miss, fetch data from database
             $list = [];
             $db = DB::getInstance();
             $req = $db->query('SELECT * FROM kinh_di_genre');
@@ -35,7 +33,6 @@ class Genres
                 $list[] = new Genres($item['name'], $item['slug'], $item['origin_name'], $item['poster_url'], $item['thumb_url'], $item['year']);
             }
 
-            // Store the data in cache
             $cache->set($cacheKey, $list, $cacheExpiry);
         }
 

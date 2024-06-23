@@ -45,10 +45,12 @@ if (isset($response_object['movie']) && !empty($response_object['movie'])) {
         $video_film = $episodes[0]['link_embed'];
         $title_episodes = $episodes[0]['filename'];
     } else {
-        echo 'No episodes found.';
+        header("Location: /web-film/?controller=pages&action=error_204");
+        exit();
     }
 } else {
-    echo "Movie data not found.";
+    header("Location: /web-film/?controller=pages&action=error_400");
+    exit();
 }
 ?>
 <div class="container">

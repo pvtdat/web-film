@@ -1,5 +1,5 @@
 <?php
-class BaseController
+class DashBoardController
 {
     protected $folder;
     function render($file, $data = array())
@@ -10,7 +10,7 @@ class BaseController
         ob_start();
         require_once($view_file);
         $content = ob_get_clean();
-        require_once('views/layouts/application.php');
+        require_once('views/layouts/dashboard.php');
         } else {
             header('Location: index.php?controller=pages&action=error_404');
         }

@@ -57,6 +57,19 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li> -->
               </ul>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown2" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Quốc gia
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown2">
+                <li><a class="dropdown-item" href="?controller=movie&action=kinhdi">Việt Nam</a></li>
+                <!-- <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              </ul>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="?controller=movie&action=newmovies">Phim hot</a>
             </li>

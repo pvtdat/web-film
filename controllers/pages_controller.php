@@ -38,8 +38,28 @@ class PagesController extends BaseController
     $this->render('home', $data);
   }
 
-  public function error()
+  public function error_204()
   {
-    $this->render('error');
+    $this->render('error_204');
+  }
+
+  public function error_400()
+  {
+    $this->render('error_400');
+  }
+
+  public function error_404()
+  {
+    $this->render('error_404');
+  }
+
+  public function error_500()
+  {
+    $this->render('error_500');
+  }
+
+  public function error_502()
+  {
+    $this->render('error_502');
   }
 }

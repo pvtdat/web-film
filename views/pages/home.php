@@ -75,7 +75,28 @@ function get_database_connection()
 //   save_data_to_db($pdo, $movies);
 // }
 
-?>
+?>  
+
+<style>
+       
+    </style>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+      </div>
+      <div class="modal-body">
+      <p><i class="fa-solid fa-hand-point-right" style="color: #FFD43B;"></i> Liên hệ Facebook <a href="https://www.facebook.com/pvtd.2003/">Dat Pham</a> để yêu cầu phim!</p>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-design" data-bs-dismiss="modal" style="color: #ffffff; font-size: 13px;">Đã hiểu</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <body>
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -345,8 +366,8 @@ function get_database_connection()
     </div>
   </div>
 
-    <!-- NGÃ RẼ TỬ THẦN -->
-    <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
+  <!-- NGÃ RẼ TỬ THẦN -->
+  <div class="mt-2 ps-4 d-flex justify-content-between align-items-center">
     <a class="disabled genre-title text-left" href="">NGÃ RẼ TỬ THẦN
       <i class="fas fa-angle-right"></i>
 
@@ -828,5 +849,22 @@ function get_database_connection()
         interval: false
       });
     });
+
+    var visitedInfo = JSON.parse(localStorage.getItem('visitedInfo')) || {};
+    var visited = visitedInfo.visited;
+    var lastVisitTime = visitedInfo.lastVisitTime || 0;
+    
+    // timeout for localStorage (1 min = 60s)
+    var timeoutDuration = 5 * 60 * 1000;
+    
+    if (!visited || (Date.now() - lastVisitTime > timeoutDuration)) {
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        myModal.show();
+        
+        // save new time
+        visitedInfo.visited = true;
+        visitedInfo.lastVisitTime = Date.now();
+        localStorage.setItem('visitedInfo', JSON.stringify(visitedInfo));
+    }
   });
 </script>

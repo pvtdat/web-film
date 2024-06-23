@@ -37,7 +37,8 @@ if (isset($movie) && !empty($movie)) {
     $status = $movie['status'];
     $overview = $movie['overview'];
 } else {
-    echo "Movie data not found.";
+    header("Location: /web-film/?controller=pages&action=error_400");
+    exit();
 }
 ?>
 <div class="container">

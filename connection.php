@@ -13,7 +13,8 @@ class DB
         self::$instance->exec("SET NAMES 'utf8'");
         self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       } catch (PDOException $ex) {
-        die($ex->getMessage());
+        header("Location: /web-film/?controller=pages&action=error_500");
+        exit();
       }
     }
     return self::$instance;

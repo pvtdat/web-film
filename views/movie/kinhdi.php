@@ -1,13 +1,17 @@
 <?php
-    $url_src = 'https://img.phimapi.com/';
-    $items_per_page = 20;
-    $total_items = sizeof($genre_kinh_di);
-    
-    $totalPages = ceil($total_items / $items_per_page);
-    $currentPage  = isset($_GET['page']) ? intval($_GET['page']) : 1;
-    $offset = ($currentPage  - 1) * $items_per_page;
-    
-    $movies_for_current_page = array_slice($genre_kinh_di, $offset, $items_per_page);
+    if(isset($genre_kinh_di)) {
+        $url_src = 'https://img.phimapi.com/';
+        $items_per_page = 20;
+        $total_items = sizeof($genre_kinh_di);
+        
+        $totalPages = ceil($total_items / $items_per_page);
+        $currentPage  = isset($_GET['page']) ? intval($_GET['page']) : 1;
+        $offset = ($currentPage  - 1) * $items_per_page;
+        $movies_for_current_page = array_slice($genre_kinh_di, $offset, $items_per_page);
+    } else {
+        header("Location: /web-film/?controller=pages&action=error_204");
+        exit();
+    }
 ?>
 
 <div class="title my-5">
