@@ -1,12 +1,14 @@
-<DOCTYPE html>
-
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    
     <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="/web-film/assets/image/img/logo_dit.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    
     <!-- CSS Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -63,7 +65,7 @@
                 Quốc gia
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown2">
-                <li><a class="dropdown-item" href="?controller=movie&action=kinhdi">Việt Nam</a></li>
+                <li><a class="dropdown-item" href="?controller=movie&action=viemovies">Việt Nam</a></li>
                 <!-- <li>
                 <hr class="dropdown-divider">
               </li>
@@ -94,3 +96,5 @@
   </body>
 
   <footer></footer>
+</html>
+<DOCTYPE html>
