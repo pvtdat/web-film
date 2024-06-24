@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     
     <!-- Icon -->
-    <link rel="icon" type="image/x-icon" href="/web-film/assets/image/img/logo_dit.jpg">
+    <link rel="icon" type="image/x-icon" href="/web-film/assets/image/img/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <!-- CSS Bootstrap 5 -->

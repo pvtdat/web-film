@@ -38,13 +38,13 @@ class API_KKPHIM {
     private function make_api_request($url, $query_fields) {
         $cache_key = md5($url . serialize($query_fields));
         $cache_file = $this->cache_dir . $cache_key;
-        $ttl = 30 * 24 * 60 * 60;
+        $ttl = 3 * 24 * 60 * 60;
         
         // $this->cleanup_cache();
 
-        // if (file_exists($cache_file) && (filemtime($cache_file) > (time() - $ttl))) {
-        //     return json_decode(file_get_contents($cache_file), true);
-        // }
+        if (file_exists($cache_file) && (filemtime($cache_file) > (time() - $ttl))) {
+            return json_decode(file_get_contents($cache_file), true);
+        }
 
         if (file_exists($cache_file)) {
             return json_decode(file_get_contents($cache_file), true);

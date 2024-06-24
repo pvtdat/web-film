@@ -40,7 +40,7 @@ if (isset($response_object['movie']) && !empty($response_object['movie'])) {
     $vote_average = mt_rand(60, 100);
     $status = $movie['episode_current'];
     $overview = $movie['content'];
-    if (isset($response_object['episodes']) && !empty($response_object['episodes'])) {
+    if (isset($response_object['episodes'][0]['server_data']) && !empty($response_object['episodes'][0]['server_data'])) {
         $episodes = $response_object['episodes'][0]['server_data'];
         $video_film = $episodes[0]['link_embed'];
         $title_episodes = $episodes[0]['filename'];

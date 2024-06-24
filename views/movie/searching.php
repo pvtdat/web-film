@@ -1,7 +1,7 @@
 <?php
     $keyword = isset($_POST['key']) ? $_POST['key'] : '';
     $key = '""';
-    if (!empty($keyword) && ctype_alnum($keyword)) {
+    if (!empty($keyword) && preg_match('/^[a-zA-Z0-9 ]+$/u', $keyword)) {
         $key = htmlspecialchars($keyword, ENT_QUOTES, 'UTF-8');
     }
     $api = API_KKPHIM::getInstance();
@@ -19,11 +19,7 @@
 <div>
     <?php
     $counter = 0;
-    $max_items = 18;
     foreach ($response_object['items'] as $index => $movie):
-        if ($index >= $max_items) {
-            break;
-        }
         if ($counter % 4 === 0):
             if ($counter > 0):
                 echo '</div>';

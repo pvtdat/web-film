@@ -1,8 +1,8 @@
 body {
     background-image: linear-gradient(to right top, #0f172a, #13203c, #172a4f, #1b3363, #203d78, #2b4384, #364a91, #41509d, #5253a3, #6257a9, #725aae, #815db3);
-}
-
-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     padding-top: 76px;
 }
 
