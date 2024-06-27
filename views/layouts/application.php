@@ -27,7 +27,7 @@
 
     <!-- CSS Style -->
     <link rel="stylesheet" href="/web-film/assets/css/styles.css">
-    <title>DATiT</title>
+    <title>Movie Online</title>
 
     <!-- Nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -95,6 +95,13 @@
     <?= @$content ?>
   </body>
 
-  <footer></footer>
+  <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright footer-content text-center my-auto">
+          <p>Copyright &copy; 2024 by <a href="">DatPham.Com</a></p> <span class="footer-space">|</span>
+          <p>Vận hành bởi Dat Pham <i class="far fa-heart"></i></p>
+        </div>
+    </div>
+  </footer>
 </html>
 <DOCTYPE html>

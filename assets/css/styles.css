@@ -4,6 +4,57 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 76px;
+    padding-bottom: 66px;
+}
+
+.footer-space {
+    display: inline;
+}
+
+footer.sticky-footer {
+    background-image: linear-gradient(to right top, #0f172a, #13203c, #172a4f, #1b3363, #203d78, #2b4384, #364a91, #41509d, #5253a3, #6257a9, #725aae, #815db3);
+    padding: 1rem 0;
+    flex-shrink: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+footer.sticky-footer .copyright {
+    line-height: 1;
+    font-size: 0.8rem;
+    font-family: 'Josefin Sans';
+    color: #ffffff;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-content p {
+        margin: 5px 0;
+    }
+
+    .footer-space {
+        display: none;
+      }
+}
+
+body.sidebar-toggled footer.sticky-footer {
+    width: 100%;
 }
 
 .navbar .search-form .form-control {
